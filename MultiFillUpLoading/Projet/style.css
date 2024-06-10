@@ -46,11 +46,15 @@ body{
 .file-uploader .file-liste{
     list-style-type: none;
     width: 100%;
-    padding: 20px;
+    padding-bottom: 10px;
     max-height: 400px;
     overflow-y: auto;
     scrollbar-color: #999 transparent;
     scrollbar-width: thin;
+}
+
+.file-uploader .file-liste:has(li) {
+    padding: 20px;
 }
 
 .file-liste .file-item {
@@ -68,6 +72,7 @@ body{
     align-items: center;
     justify-content: center;
     display: flex;
+    text-transform: uppercase;
 }
 
 .file-liste .file-item .file-content-wrapper{
@@ -137,12 +142,22 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.file-uploader .file-upload-box.active{
+    border: 2px solid #5145ba;
+    background-color: #f3f6ff;
 }
 
 .file-uploader .file-upload-box .box-title{
     font-size: 1.05rem;
     font-weight: 500;
     color: #626161;
+}
+
+.file-uploader .file-upload-box.active .box-title{
+    pointer-events: none;
 }
 
 .file-upload-box .box-title .file-browser-button{
